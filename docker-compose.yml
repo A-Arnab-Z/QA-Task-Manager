@@ -1,0 +1,42 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: qa_task_manager
+      POSTGRES_USER: qa_admin
+      POSTGRES_PASSWORD: change_me
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - '6379:6379'
+
+  api:
+    build:
+      context: ./backend
+    environment:
+      NODE_ENV: production
+      PORT: 8080
+      DATABASE_URL: postgresql://qa_admin:change_me@db:5432/qa_task_manager
+    depends_on:
+      - db
+    ports:
+      - '8080:8080'
+
+  frontend:
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+    depends_on:
+      - api
+    ports:
+      - '3000:3000'
+
+volumes:
+  pg_data:
