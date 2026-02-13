@@ -1,0 +1,35 @@
+{
+  "entities": {
+    "user": {
+      "uid": "string",
+      "name": "string",
+      "email": "string",
+      "avatarUrl": "string",
+      "role": "admin|member",
+      "createdAt": "timestamp"
+    },
+    "task": {
+      "projectName": "string",
+      "workType": "inspection|testing|documentation|compliance",
+      "description": "string",
+      "priority": "critical|high|medium|low",
+      "deadline": "timestamp",
+      "assignedTo": "string",
+      "assignedToName": "string",
+      "status": "pending|inProgress|blocked|completed",
+      "remarks": "string",
+      "createdBy": "string",
+      "createdAt": "timestamp",
+      "updatedAt": "timestamp"
+    },
+    "activityLog": {
+      "taskId": "string",
+      "taskTitle": "string",
+      "actorId": "string",
+      "actorName": "string",
+      "actionType": "create|update|delete|priorityUpdate",
+      "changeSummary": "string",
+      "createdAt": "timestamp"
+    }
+  }
+}
