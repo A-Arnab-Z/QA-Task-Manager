@@ -1,17 +1,24 @@
 # QC TaskMaster
 
-Production-focused QA/QC task management app for engineering teams built with Next.js, TypeScript, Firebase, Tailwind, and Genkit.
+Enterprise-ready QA/QC task management platform for engineering organizations.
 
-## Features
-- Firebase Auth with Email/Password and Google Sign-In.
-- First registered user automatically receives `admin`; all others are `member`.
-- Protected app routes (`/dashboard`, `/tasks`) with modern authenticated layout.
-- Role-based dashboards (admin analytics + member personal task view).
-- Tasks data table with filtering, colored priority/status badges, overdue highlighting.
-- Task creation/editing in side sheet UX.
-- Admin-only AI Priority modal using Genkit flow suggestions.
+## What was added
+This repository now includes a production-focused architecture blueprint and implementation scaffolding for:
+- Role-based task lifecycle management
+- Admin + Team analytics dashboards
+- PostgreSQL normalized schema with indexing
+- JWT + RBAC security middleware examples
+- Notification-ready backend module layout
+- Docker/VPS deployment guidance
 
-## Quick start
+## Key deliverables
+- Architecture design: `docs/enterprise-architecture.md`
+- Database schema: `docs/database/schema.sql`
+- Dashboard SQL metrics: `docs/queries/dashboard-metrics.sql`
+- Backend API scaffold: `backend/src/*`
+- Sample enterprise React components: `src/components/enterprise/*`
+
+## Existing app quick start
 1. `npm install`
 2. Fill `.env.local` based on `.env.example`
 3. `npm run dev`
